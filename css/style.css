@@ -1,5 +1,4 @@
 body {
-  background-color: rgb(254, 254, 254);
   font-family: Raleway;
   box-sizing: border-box;
 }
@@ -8,9 +7,32 @@ body {
   width: 20px;
 }
 
-main {
-  width: 90vw;
-  margin: 0 auto;
+.who-we-are {
+  position: relative;
+}
+.who-we-are::before {
+  content: "";
+  width: 355px;
+  height: 355px;
+  background-color: #FFE711;
+  filter: blur(200px);
+  border-radius: 50%;
+  top: -150px;
+  right: -29px;
+  position: absolute;
+  display: block;
+}
+.who-we-are::after {
+  content: "";
+  width: 355px;
+  height: 355px;
+  background-color: #1A7DF0;
+  filter: blur(200px);
+  border-radius: 50%;
+  top: -450px;
+  left: -150px;
+  position: absolute;
+  display: block;
 }
 
 p {
@@ -136,7 +158,7 @@ h5 {
   position: relative;
 }
 
-.image-crop::before {
+.im::before {
   content: "";
   display: block;
   position: absolute;
@@ -368,6 +390,42 @@ ul li:not(:last-child) {
   margin-bottom: 15px;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 42px;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 21px;
+  height: 21px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+ul li::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 11px;
+  height: 11px;
+  background-color: #FFE711;
+  border-radius: 50%;
+  z-index: 1;
+}
+
 li {
   font-weight: 400;
   font-size: 20px;
@@ -436,6 +494,11 @@ li {
 .f7 {
   grid-column: 4/5;
   grid-row: 1/4;
+}
+
+.f1:hover, .f2:hover, .f3:hover, .f4:hover, .f5:hover, .f6:hover, .f7:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
 }
 
 @media (width < 1000px) {
